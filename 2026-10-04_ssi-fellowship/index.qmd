@@ -1,0 +1,16 @@
+---
+author:
+  - Duncan Leggat
+institute:
+  - UCL ARC
+date: 2026-10-04
+title: Institute for Research Software Fellowship 2027
+subtitle: Application presentation
+---
+
+# Applying and whatnot
+
+## About me
+
+- bullet point the first
+- bullet point the second

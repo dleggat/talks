@@ -1,0 +1,12 @@
+format:
+  revealjs:
+    slide-number: true
+    incremental: true
+    smaller: true
+
+website:
+  title: Duncan Leggat
+  site-url: https://dleggat.github.io/talks
+
+project:
+  type: website
