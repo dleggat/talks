@@ -3,14 +3,223 @@ author:
   - Duncan Leggat
 institute:
   - UCL ARC
-date: 2026-10-04
+date: 2026-10-05
 title: Institute for Research Software Fellowship 2027
-subtitle: Application presentation
+subtitle: Video application
 ---
 
-# Applying and whatnot
+# About me
 
-## About me
+::::{.columns}
+:::{.column width=40%}
+![](images/selfie.png)
+:::
 
-- bullet point the first
-- bullet point the second
+:::{.column width=35%}
+
+- Duncan Leggat
+- RSE in UCL ARC
+
+
+:::
+
+::::
+
+## Research software before RSE
+
+::::{.columns}
+
+:::{.column}
+
+**Particle physics**
+
+- Contributed to and lead central software
+- Created and maintained our groups software infrastructure
+
+:::{.fragment}
+![](images/tW.png){width=60%}
+
+::: {style="font-size: 60%;"}
+*First observation of tW in l+jets channel*
+:::
+:::
+:::
+
+:::{.column}
+
+**Creative industries**
+
+- Worked with academics and SMEs to produce an interactive performance
+
+:::{.fragment}
+![](images/song_the_future.webp)
+:::
+:::
+
+::::
+
+## Research Software Engineer
+
+![](images/arc_highlighted.png)
+	
+- RSE at UCL ARC since October 2023
+- Collaborations team
+
+## Research projects
+
+::::{.columns}
+
+:::{.column width=30%}
+
+**Highlight projects**
+
+:::{.nonincremental}
+- Exoplanet climatology
+- Galactic modeling
+- Nuclear fusion uncertainty estimation
+- Agent-based models
+- Carpentry and UCL teaching
+- Training materials for GPU programming
+:::
+
+:::
+
+:::{.column width=30%}
+
+![](images/exo.png)
+<div style="margin-top: -30px;"></div>
+::: {style="font-size: 60%;"}
+*Exoplanet climatology*
+:::
+![](images/exo_plot.png)
+
+:::
+
+:::{.column width=30%}
+![](images/agent_based_model.png)
+
+<div style="margin-top: -30px;"></div>
+::: {style="font-size: 60%;"}
+*Fox and rabbit simulation*
+:::
+
+![](images/dirac_train.png)
+
+<div style="margin-top: -30px;"></div>
+::: {style="font-size: 60%;"}
+*GPU training  materials*
+:::
+
+
+:::
+
+::::
+
+# Fellowship proposal:
+
+::: {style="font-size: 350%;"}
+**Programming for GPUs**
+:::
+
+## The future of HPC is GPUs
+
+- More cost-effective per FLOP than CPUs,
+- More energy efficient,
+- Memory prices skyrocketing shines doubt on future memory-intensive CPU systems.
+
+:::{.fragment}
+**Is the community ready for this?**
+:::
+
+- Many codes are written for CPU machines, and will struggle running in this brave new world.
+- Academics are more familiar with CPU paradigms.
+- Upskilling and practical experience is mandatory for the future.
+
+## The problem?
+
+No training materials for the particular problem?
+
+## The problem?
+
+~~No training materials for the particular problem?~~
+
+- *Much* training available for CUDA, OpenMP, etc.
+- For two years now ARC and DiRAC have been working together to produce high quality training material for a range of subjects related to GPU programming.
+
+:::{.fragment}
+Then we must need some training events?
+:::
+
+## The problem?
+
+~~No training materials for the particular problem?~~
+
+:::{.nonincremental}
+- *Much* training available for CUDA, OpenMP, etc.
+- For two years now ARC and DiRAC have been working together to produce high quality training material for a range of subjects related to GPU programming.
+:::
+
+~~Then we must need some training events?~~
+
+- We ran a workshop training event in Nottingham last month.
+- Was a great success, with positive feedback about the program and exercises.
+
+:::{.fragment}
+Potential users don't have access to GPUs?
+:::
+
+## The problem!
+
+**Potential users don't have access to GPUs**
+
+- HPC is moving to GPU, but it far from ubiquitous.
+- HPC users that already exist *want* to port code to GPUs, but don't have access to the hardware for development and testing.
+
+- People need access to GPUs!
+
+## My solution!
+
+- Hardware is expensive and in short supply - this fellowship won't solve that!
+- BUT!
+- We *can* plan a space where hardware is available and experts are on hand to help.
+
+:::{.fragment}
+**BYOC GPU hackathon**
+:::
+
+- 2-day hackathon where a variety of GPUs would be available.
+- Individuals or teams bring their own code.
+- GPU experts in the room to help.
+
+## What can we bring to the table?
+
+::::{.columns}
+
+:::{.column width=45%}
+**UCL**
+
+- UCL servers have a range of GPUs,
+ - In particular, AMD MI200s to test HIP-ified code.
+- Outside of term-time we can book out a room suitable for 30-40 people.
+- ARC RSE team features many suitable candidates to be helpers
+:::
+
+:::{.column width=45%}
+**Fellowship funding**
+
+- Paying for RSE time to help and assist at the event.
+  - UCL ARC day rate for collaborative work is £350, so ~£2000 for 2 days of 3 RSEs time.
+- Catering at the event.
+  - Initial investigation into UCL catering put two days of 30 people at around £1000.
+- Marketing and advertising of the event.
+
+:::
+
+::::
+
+## Building community
+
+- This is also a community-building activity!
+- At the Nottingham workshop we had people connecting and building expertise between groups and institutions.
+- I want to build on this!
+- These are the first steps towards a wider community sharing experiences.
