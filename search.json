@@ -1,9 +1,79 @@
 [
   {
-    "objectID": "2026-10-04_ssi-fellowship/index.html#about-me",
-    "href": "2026-10-04_ssi-fellowship/index.html#about-me",
+    "objectID": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",
+    "href": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",
     "title": "Institute for Research Software Fellowship 2027",
-    "section": "About me",
-    "text": "About me\n\nbullet point the first\nbullet point the second"
+    "section": "Research software before RSE",
+    "text": "Research software before RSE\n\n\nParticle physics\n\nContributed to and lead central software\nCreated and maintained our groups software infrastructure\n\n\n\n\nFirst observation of tW in l+jets channel\n\n\n\nCreative industries\n\nWorked with academics and SMEs to produce an interactive performance"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#research-software-engineer",
+    "href": "2026-10-04_ssi-fellowship/index.html#research-software-engineer",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "Research Software Engineer",
+    "text": "Research Software Engineer\n\n\nRSE at UCL ARC since October 2023\nCollaborations team"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#research-projects",
+    "href": "2026-10-04_ssi-fellowship/index.html#research-projects",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "Research projects",
+    "text": "Research projects\n\n\nHighlight projects\n\nExoplanet climatology\nGalactic modeling\nNuclear fusion uncertainty estimation\nAgent-based models\nCarpentry and UCL teaching\nTraining materials for GPU programming\n\n\n\n\n\n\n\nExoplanet climatology\n\n\n\n\n\n\n\n\nFox and rabbit simulation\n\n\n\n\n\n\nGPU training materials"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#the-future-of-hpc-is-gpus",
+    "href": "2026-10-04_ssi-fellowship/index.html#the-future-of-hpc-is-gpus",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "The future of HPC is GPUs",
+    "text": "The future of HPC is GPUs\n\nMore cost-effective per FLOP than CPUs,\nMore energy efficient,\nMemory prices skyrocketing shines doubt on future memory-intensive CPU systems.\n\n\nIs the community ready for this?\n\n\nMany codes are written for CPU machines, and will struggle running in this brave new world.\nAcademics are more familiar with CPU paradigms.\nUpskilling and practical experience is mandatory for the future."
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#the-problem",
+    "href": "2026-10-04_ssi-fellowship/index.html#the-problem",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "The problem?",
+    "text": "The problem?\nNo training materials for the particular problem?"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#the-problem-1",
+    "href": "2026-10-04_ssi-fellowship/index.html#the-problem-1",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "The problem?",
+    "text": "The problem?\nNo training materials for the particular problem?\n\nMuch training available for CUDA, OpenMP, etc.\nFor two years now ARC and DiRAC have been working together to produce high quality training material for a range of subjects related to GPU programming.\n\n\nThen we must need some training events?"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#the-problem-2",
+    "href": "2026-10-04_ssi-fellowship/index.html#the-problem-2",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "The problem?",
+    "text": "The problem?\nNo training materials for the particular problem?\n\nMuch training available for CUDA, OpenMP, etc.\nFor two years now ARC and DiRAC have been working together to produce high quality training material for a range of subjects related to GPU programming.\n\nThen we must need some training events?\n\nWe ran a workshop training event in Nottingham last month.\nWas a great success, with positive feedback about the program and exercises.\n\n\nPotential users don’t have access to GPUs?"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#the-problem-3",
+    "href": "2026-10-04_ssi-fellowship/index.html#the-problem-3",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "The problem!",
+    "text": "The problem!\nPotential users don’t have access to GPUs\n\nHPC is moving to GPU, but it far from ubiquitous.\nHPC users that already exist want to port code to GPUs, but don’t have access to the hardware for development and testing.\nPeople need access to GPUs!"
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#my-solution",
+    "href": "2026-10-04_ssi-fellowship/index.html#my-solution",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "My solution!",
+    "text": "My solution!\n\nHardware is expensive and in short supply - this fellowship won’t solve that!\nBUT!\nWe can plan a space where hardware is available and experts are on hand to help.\n\n\nBYOC GPU hackathon\n\n\n2-day hackathon where a variety of GPUs would be available.\nIndividuals or teams bring their own code.\nGPU experts in the room to help."
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#what-can-we-bring-to-the-table",
+    "href": "2026-10-04_ssi-fellowship/index.html#what-can-we-bring-to-the-table",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "What can we bring to the table?",
+    "text": "What can we bring to the table?\n\n\nUCL\n\nUCL servers have a range of GPUs,\nIn particular, AMD MI200s to test HIP-ified code.\nOutside of term-time we can book out a room suitable for 30-40 people.\nARC RSE team features many suitable candidates to be helpers\n\n\nFellowship funding\n\nPaying for RSE time to help and assist at the event.\n\nUCL ARC day rate for collaborative work is £350, so ~£2000 for 2 days of 3 RSEs time.\n\nCatering at the event.\n\nInitial investigation into UCL catering put two days of 30 people at around £1000.\n\nMarketing and advertising of the event."
+  },
+  {
+    "objectID": "2026-10-04_ssi-fellowship/index.html#building-community",
+    "href": "2026-10-04_ssi-fellowship/index.html#building-community",
+    "title": "Institute for Research Software Fellowship 2027",
+    "section": "Building community",
+    "text": "Building community\n\nThis is also a community-building activity!\nAt the Nottingham workshop we had people connecting and building expertise between groups and institutions.\nI want to build on this!\nThese are the first steps towards a wider community sharing experiences."
   }
 ]
