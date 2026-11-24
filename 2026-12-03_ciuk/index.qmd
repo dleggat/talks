@@ -8,14 +8,14 @@ title: Securing our Sensitive Data
 subtitle: The demand for and challenges of Confidential Computing on High Performance Computing
 ---
 
-# About the presenter
+## About the presenter
 
 ::::{.columns}
-:::{.column width= 40%}
-![]{images/selfie.png}
+:::{.column width=40%}
+![](images/selfie.png)
 :::
 
-:::{.column width = 60%}
+:::{.column width=60%}
 
 - Duncan Leggat
 - Former experimental particle physicist
@@ -23,28 +23,56 @@ subtitle: The demand for and challenges of Confidential Computing on High Perfor
   - Specialising in HPC,
   - GPU training,
   - Confidential computing.
+:::
+
+::::
+
 
 # Analysing sensitive data
 
 ## What is sensitive data?
 
+::::{.columns}
+
+:::{.column width=40%}
 Data that contains information that must not be unintentionally disclosed
 
-- Personal data that directly or indirectly identifies indiviuals
+:::{.nonincremental}
+:::{.fragment fragment-index=1}
+- Personal data that directly or indirectly identifies individuals
+:::
+:::{.fragment fragment-index=2}
 - Medical or other protected category data
+:::
+:::{.fragment fragment-index=3}
 - Environmental data
+:::
+:::{.fragment fragment-index=4}
+- Sensitive IP
+:::
+:::
+
+:::
+
+:::{.column width=60%}
+
+:::{.r-stack}
+![](images/taytay.jpg){.fragment fragment-index=1}
+
+![](images/cat.webp){.fragment fragment-index=2}
+
+![](images/taytay.jpg){.fragment fragment-index=3}
+
+![](images/cat.webp){.fragment fragment-index=4}
+:::
+:::
+::::
 
 :::{.fragment}
 Anything you would store in a data safe haven, TRE, etc.
 :::
 
-## Using sensitive data
-
-[image of encryption at rest and in motion]
-
-- Can we keep data in use secure?
-
-## Secure data in use
+## Using secure data
 
 Current solutions for running on sensitive data:
 
@@ -72,25 +100,39 @@ Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be t
 
 - Relies on governance agreements with HPC provider.
 - Though it would break the agreement, they *can* look at the data being analysed.
-- Doesn't solve the problem of encryption at point of use
+- For particularly sensitive data, therefore, this is not *enough* security.
 
 :::{.fragment}
-Can Confidential Computing (CC) solve this problem for us?
+Is 
 :::
 
-# What is Confidential Computing?
+# Introducing Confidential Computing
 
-Protecting data in use with hardware-based, attestable Trusted Execution Environments (TEEs)
+::: {.r-hstack}
+![](images/rest_move.png)
 
-**What is a Trusted Execution Environment?**
+:::{.fragment}
+![](images/conf_comp.png)
+:::
 
+:::	
+
+## The Trusted Execution Environment (TEE)
+
+:::{.fragment}
+An attestable, hardware-based environment to protect data.
+:::
+
+:::{.fragment}
 CCC defines a TEE as an environment that provides:
 
 - Data integrity,
 - Data confidentiality,
 - Code integrity.
 
-A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and and superusers.
+:::
+
+A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.
 
 ## Vendor implementations of TEEs
 
@@ -138,7 +180,11 @@ Updating at scale is largely impossible
 - Updating OS threatens both
   - Package management 
 
-# TEEs on future systems
+# Is there no hope for CC on HPC?
+
+[sad face image]
+
+## TEEs on future systems
 
 ## How we would implement TEEs on future HPC infrastructure
 
@@ -151,6 +197,6 @@ Updating at scale is largely impossible
 
 ## *Should* we implement them?
 
-This talk is not
+
 
 # Conclusions
