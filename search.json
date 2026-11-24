@@ -1,24 +1,24 @@
 [
   {
+    "objectID": "2026-12-03_ciuk/index.html#about-the-presenter",
+    "href": "2026-12-03_ciuk/index.html#about-the-presenter",
+    "title": "Securing our Sensitive Data",
+    "section": "About the presenter",
+    "text": "About the presenter\n\n\n\n\n\nDuncan Leggat\nFormer experimental particle physicist\nRSE in UCL Advanced Research Computing\n\nSpecialising in HPC,\nGPU training,\nConfidential computing."
+  },
+  {
     "objectID": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
     "href": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
     "title": "Securing our Sensitive Data",
     "section": "What is sensitive data?",
-    "text": "What is sensitive data?\nData that contains information that must not be unintentionally disclosed\n\nPersonal data that directly or indirectly identifies indiviuals\nMedical or other protected category data\nEnvironmental data\n\n\nAnything you would store in a data safe haven, TRE, etc."
+    "text": "What is sensitive data?\n\n\nData that contains information that must not be unintentionally disclosed\n\n\nPersonal data that directly or indirectly identifies individuals\n\n\n\n\nMedical or other protected category data\n\n\n\n\nEnvironmental data\n\n\n\n\nSensitive IP\n\n\n\n\n\n\n\n\n\n\n\nAnything you would store in a data safe haven, TRE, etc."
   },
   {
-    "objectID": "2026-12-03_ciuk/index.html#using-sensitive-data",
-    "href": "2026-12-03_ciuk/index.html#using-sensitive-data",
+    "objectID": "2026-12-03_ciuk/index.html#using-secure-data",
+    "href": "2026-12-03_ciuk/index.html#using-secure-data",
     "title": "Securing our Sensitive Data",
-    "section": "Using sensitive data",
-    "text": "Using sensitive data\n[image of encryption at rest and in motion]\n\nCan we keep data in use secure?"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#secure-data-in-use",
-    "href": "2026-12-03_ciuk/index.html#secure-data-in-use",
-    "title": "Securing our Sensitive Data",
-    "section": "Secure data in use",
-    "text": "Secure data in use\nCurrent solutions for running on sensitive data:\n\nAnonymisation -&gt; can’t always guarantee against indirect identification,\nAnalysing in a Trusted Research Environment (TRE) -&gt; limited compute pool\n[other solution?]\n\n\nIf we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems."
+    "section": "Using secure data",
+    "text": "Using secure data\nCurrent solutions for running on sensitive data:\n\nAnonymisation -&gt; can’t always guarantee against indirect identification,\nAnalysing in a Trusted Research Environment (TRE) -&gt; limited compute pool\n[other solution?]\n\n\nIf we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems."
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#introduction-to-fridge",
@@ -32,7 +32,14 @@
     "href": "2026-12-03_ciuk/index.html#limits-of-fridge",
     "title": "Securing our Sensitive Data",
     "section": "Limits of FRIDGE",
-    "text": "Limits of FRIDGE\n[Same image as previous slide]\n\nRelies on governance agreements with HPC provider.\nThough it would break the agreement, they can look at the data being analysed.\nDoesn’t solve the problem of encryption at point of use\n\n\nCan Confidential Computing (CC) solve this problem for us?"
+    "text": "Limits of FRIDGE\n[Same image as previous slide]\n\nRelies on governance agreements with HPC provider.\nThough it would break the agreement, they can look at the data being analysed.\nFor particularly sensitive data, therefore, this is not enough security.\n\n\nIs"
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#the-trusted-execution-environment-tee",
+    "href": "2026-12-03_ciuk/index.html#the-trusted-execution-environment-tee",
+    "title": "Securing our Sensitive Data",
+    "section": "The Trusted Execution Environment (TEE)",
+    "text": "The Trusted Execution Environment (TEE)\n\nAn attestable, hardware-based environment to protect data.\n\n\nCCC defines a TEE as an environment that provides:\n\nData integrity,\nData confidentiality,\nCode integrity.\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
@@ -63,6 +70,13 @@
     "text": "Difficulties in implementing TEEs on current HPC\nGetting one TEE running is difficult\n\nBIOS updates\n\nNot too difficult\n\nOS and kernel version\n\nRocky 9 uses Linux kernel []\nRocky 10 uses [] &lt;-\nMuch harder to implement at scale\n\n\nUpdating at scale is largely impossible\n\nHPC prioritises stability and up-time.\nUpdating OS threatens both\n\nPackage management"
   },
   {
+    "objectID": "2026-12-03_ciuk/index.html#tees-on-future-systems",
+    "href": "2026-12-03_ciuk/index.html#tees-on-future-systems",
+    "title": "Securing our Sensitive Data",
+    "section": "TEEs on future systems",
+    "text": "TEEs on future systems"
+  },
+  {
     "objectID": "2026-12-03_ciuk/index.html#how-we-would-implement-tees-on-future-hpc-infrastructure",
     "href": "2026-12-03_ciuk/index.html#how-we-would-implement-tees-on-future-hpc-infrastructure",
     "title": "Securing our Sensitive Data",
@@ -74,7 +88,7 @@
     "href": "2026-12-03_ciuk/index.html#should-we-implement-them",
     "title": "Securing our Sensitive Data",
     "section": "Should we implement them?",
-    "text": "Should we implement them?\nThis talk is not"
+    "text": "Should we implement them?"
   },
   {
     "objectID": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",

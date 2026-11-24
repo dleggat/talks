@@ -150,12 +150,12 @@ Duncan Leggat
 
   <p class="date">2026-12-03</p>
 </section>
-<section id="about-the-presenter" class="title-slide slide level1 center">
-<h1>About the presenter</h1>
+<section id="about-the-presenter" class="slide level2">
+<h2>About the presenter</h2>
 <div class="columns">
-<p>:::{.column width= 40%} ![]{images/selfie.png}</p>
-</div>
-<p>:::{.column width = 60%}</p>
+<div class="column" style="width:40%;">
+<p><img data-src="images/selfie.png"></p>
+</div><div class="column" style="width:60%;">
 <ul>
 <li class="fragment">Duncan Leggat</li>
 <li class="fragment">Former experimental particle physicist</li>
@@ -166,8 +166,8 @@ Duncan Leggat
 <li class="fragment">Confidential computing.</li>
 </ul></li>
 </ul>
+</div></div>
 </section>
-
 <section>
 <section id="analysing-sensitive-data" class="title-slide slide level1 center">
 <h1>Analysing sensitive data</h1>
@@ -175,25 +175,43 @@ Duncan Leggat
 </section>
 <section id="what-is-sensitive-data" class="slide level2">
 <h2>What is sensitive data?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <p>Data that contains information that must not be unintentionally disclosed</p>
+<div class="fragment" data-fragment-index="1">
 <ul>
-<li class="fragment">Personal data that directly or indirectly identifies indiviuals</li>
-<li class="fragment">Medical or other protected category data</li>
-<li class="fragment">Environmental data</li>
+<li>Personal data that directly or indirectly identifies individuals</li>
 </ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Medical or other protected category data</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Environmental data</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>Sensitive IP</li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="r-stack">
+<p><img data-src="images/taytay.jpg" class="fragment" data-fragment-index="1"></p>
+<p><img data-src="images/cat.webp" class="fragment" data-fragment-index="2"></p>
+<p><img data-src="images/taytay.jpg" class="fragment" data-fragment-index="3"></p>
+<p><img data-src="images/cat.webp" class="fragment" data-fragment-index="4"></p>
+</div>
+</div></div>
 <div class="fragment">
 <p>Anything you would store in a data safe haven, TRE, etc.</p>
 </div>
 </section>
-<section id="using-sensitive-data" class="slide level2">
-<h2>Using sensitive data</h2>
-<p>[image of encryption at rest and in motion]</p>
-<ul>
-<li class="fragment">Can we keep data in use secure?</li>
-</ul>
-</section>
-<section id="secure-data-in-use" class="slide level2">
-<h2>Secure data in use</h2>
+<section id="using-secure-data" class="slide level2">
+<h2>Using secure data</h2>
 <p>Current solutions for running on sensitive data:</p>
 <ul>
 <li class="fragment">Anonymisation -&gt; can’t always guarantee against indirect identification,</li>
@@ -220,24 +238,36 @@ Duncan Leggat
 <ul>
 <li class="fragment">Relies on governance agreements with HPC provider.</li>
 <li class="fragment">Though it would break the agreement, they <em>can</em> look at the data being analysed.</li>
-<li class="fragment">Doesn’t solve the problem of encryption at point of use</li>
+<li class="fragment">For particularly sensitive data, therefore, this is not <em>enough</em> security.</li>
 </ul>
 <div class="fragment">
-<p>Can Confidential Computing (CC) solve this problem for us?</p>
+<p>Is</p>
 </div>
 </section></section>
 <section>
-<section id="what-is-confidential-computing" class="title-slide slide level1 center">
-<h1>What is Confidential Computing?</h1>
-<p>Protecting data in use with hardware-based, attestable Trusted Execution Environments (TEEs)</p>
-<p><strong>What is a Trusted Execution Environment?</strong></p>
+<section id="introducing-confidential-computing" class="title-slide slide level1 center">
+<h1>Introducing Confidential Computing</h1>
+<div class="r-hstack">
+<p><img data-src="images/rest_move.png"></p>
+<div class="fragment">
+<p><img data-src="images/conf_comp.png"></p>
+</div>
+</div>
+</section>
+<section id="the-trusted-execution-environment-tee" class="slide level2">
+<h2>The Trusted Execution Environment (TEE)</h2>
+<div class="fragment">
+<p>An attestable, hardware-based environment to protect data.</p>
+</div>
+<div class="fragment">
 <p>CCC defines a TEE as an environment that provides:</p>
 <ul>
 <li class="fragment">Data integrity,</li>
 <li class="fragment">Data confidentiality,</li>
 <li class="fragment">Code integrity.</li>
 </ul>
-<p>A TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and and superusers.</p>
+</div>
+<p>A TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.</p>
 </section>
 <section id="vendor-implementations-of-tees" class="slide level2">
 <h2>Vendor implementations of TEEs</h2>
@@ -294,9 +324,12 @@ Duncan Leggat
 </ul>
 </section></section>
 <section>
-<section id="tees-on-future-systems" class="title-slide slide level1 center">
-<h1>TEEs on future systems</h1>
-
+<section id="is-there-no-hope-for-cc-on-hpc" class="title-slide slide level1 center">
+<h1>Is there no hope for CC on HPC?</h1>
+<p>[sad face image]</p>
+</section>
+<section id="tees-on-future-systems" class="slide level2">
+<h2>TEEs on future systems</h2>
 </section>
 <section id="how-we-would-implement-tees-on-future-hpc-infrastructure" class="slide level2">
 <h2>How we would implement TEEs on future HPC infrastructure</h2>
@@ -317,7 +350,6 @@ Duncan Leggat
 </section>
 <section id="should-we-implement-them" class="slide level2">
 <h2><em>Should</em> we implement them?</h2>
-<p>This talk is not</p>
 </section></section>
 <section id="conclusions" class="title-slide slide level1 center">
 <h1>Conclusions</h1>
