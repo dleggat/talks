@@ -35,7 +35,9 @@ subtitle: The demand for and challenges of Confidential Computing on High Perfor
 ::::{.columns}
 
 :::{.column width=40%}
-Data that contains information that must not be unintentionally disclosed
+:::{.fragment fragment-index=0}
+Data that contains information that *must not* be unintentionally disclosed
+:::
 
 :::{.nonincremental}
 :::{.fragment fragment-index=1}
@@ -45,26 +47,37 @@ Data that contains information that must not be unintentionally disclosed
 - Medical or other protected category data
 :::
 :::{.fragment fragment-index=3}
-- Environmental data
-:::
-:::{.fragment fragment-index=4}
 - Sensitive IP
 :::
+:::{.fragment fragment-index=4}
+- Environmental data
 :::
+:::
+
+
+
 
 :::
 
 :::{.column width=60%}
 
+<div style="margin-top: -50px;"></div>
 :::{.r-stack}
-![](images/taytay.jpg){.fragment fragment-index=1}
+![](images/identifiable.avif){.fragment fragment-index=1}
 
-![](images/cat.webp){.fragment fragment-index=2}
+![](images/medical.avif){.fragment fragment-index=2 .fade-in-then-out}
 
-![](images/taytay.jpg){.fragment fragment-index=3}
+![](images/environmental.avif){.fragment fragment-index=4}
 
-![](images/cat.webp){.fragment fragment-index=4}
+![](images/ip.avif){.fragment fragment-index=3 .fade-in-then-out}
 :::
+
+<div style="margin-top: -100px;"></div>
+:::{.fragment fragment-index=1}
+*Stock photos from Magnific*
+:::
+
+
 :::
 ::::
 
@@ -74,15 +87,55 @@ Anything you would store in a data safe haven, TRE, etc.
 
 ## Using secure data
 
-Current solutions for running on sensitive data:
+::::{.columns}
 
-- Anonymisation -> can't always guarantee against indirect identification,
-- Analysing in a Trusted Research Environment (TRE) -> limited compute pool
-- [other solution?]
+:::{.column width=40%}
+Current solutions:
+
+:::{.fragment fragment-index=1}
+**Anonymisation**
+:::
+<div style="margin-top: -20px;"></div>
+:::{.nonincremental}
+:::{.fragment fragment-index=2}
+- Can't always guarantee against indirect identification
+:::
+<div style="margin-top: -20px;"></div>
+:::{.fragment fragment-index=3}
+- Not enough information left for some analyses
+:::
+:::
+
+<div style="margin-top: -20px;"></div>
+:::{.fragment fragment-index=4}
+**Trusted Research Environment (TRE)**
+:::
+<div style="margin-top: -20px;"></div>
+- Strict governance and technical controls
+<div style="margin-top: -20px;"></div>
+- Limited compute pool
+
+:::
+
+:::{.column width=60%}
+
+:::{.r-stack}
+
+![](images/anonymous_data.png){.fragment fragment-index=1 .fade-in-then-out}
+
+![](images/TRE.png){.fragment fragment-index=4 width=60%}
+
+:::
+
+:::
+
+::::
 
 :::{.fragment}
 If we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems.
 :::
+
+
 
 # FRIDGE TRUSTEE project
 
@@ -90,20 +143,38 @@ If we want to carry out intensive analyses, particular those with AI/ML workload
 
 ## Introduction to FRIDGE
 
-Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be thought of as portable TRE that can be deployed on HPC clusters
+:::{.r-stack}
+![](images/fridge_before.png)
 
-[Insert image that demonstrates this]
+![](images/fridge_tenancy.png){.fragment}
+
+![](images/fridge_satellite.png){.fragment}
+
+![](images/fridge_deployed.png){.fragment}
+:::
+
+Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be thought of as portable TRE that can be deployed on HPC clusters
 
 ## Limits of FRIDGE
 
-[Same image as previous slide]
+:::{.r-stack}
+![](images/fridge_notext.png)
 
+![](images/fridge_problem.png){.fragment fragment-index=2}
+:::
+
+:::{.nonincremental}
+:::{.fragment fragment-index=1}
 - Relies on governance agreements with HPC provider.
+:::
+<div style="margin-top: -30px;"></div>
+:::{.fragment fragment-index=2}
 - Though it would break the agreement, they *can* look at the data being analysed.
-- For particularly sensitive data, therefore, this is not *enough* security.
-
+:::
+<div style="margin-top: -30px;"></div>
 :::{.fragment}
-Is 
+- For particularly sensitive data, therefore, this is not *enough* security.
+:::
 :::
 
 # Introducing Confidential Computing
@@ -117,7 +188,7 @@ Is
 
 :::	
 
-## The Trusted Execution Environment (TEE)
+## The Trusted Execution Environment
 
 :::{.fragment}
 An attestable, hardware-based environment to protect data.
@@ -134,29 +205,36 @@ CCC defines a TEE as an environment that provides:
 
 A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.
 
+## TRUSTEE - adding TEEs to FRIDGE
+
+:::{.r-stack}
+![](images/fridge_notext.png)
+
+![](images/fridge_trustee.png){.fragment}
+
+![](images/fridge_sad_admin.png){.fragment}
+:::
+
 ## Vendor implementations of TEEs
 
-[Table from intro talk or reproduction thereof?]
+| Vendor | TEE technology | Generation implemented |
+| ------ | -------------- | ---------------------- |
+| Intel  | Trust Domain Extensions (TDX) | 4th gen (Sapphire Rapids) |
+| AMD    | Secure Encrypted Virutalisation (SEV) | EPYC 7003 (Milan) onwards)
+|        | TEE Device Interface Security Protocol (TDISP) | EPYC 9005 (Turin) onwards) |
+| ARM    | Realm Management Extension (RME) | Optional from ARM v9 |
+| Nvidia | GPU CC mode | Hopper and Blackwell GPUs [^1] |
 
-## Does our current HPC infrastructure support TEEs?
-
-A lot of it does!
-
-*AMD*
-
-- SEV-SNP is part of EPYC 7003 (Milan) and onwards
-- TEE Device Interface Security Protocol (TDISP) to integrate PCIe devices from 9005 (Turin) 
-
-*Intel* 
-
-- TDX was introduced in the 4th Gen Xeon (Sapphire Rapids)
-
-*Nvidia*
-
-- H100s and later offer CC modes
-  - **Note:** Grace chips *aren't* compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!
+[^1]: **Note:** Grace chips *aren't* compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot! 
 
 ## Can we turn on TEEs on a current, working HPC?
+
+We worked with the COSMA HPC sysadmins to
+
+2 goals:
+
+- Create an SEV-SNP enabled CVM on an EPYC based node
+- 
 
 :::{.fragment}
 No.
@@ -164,8 +242,11 @@ No.
 
 ## Difficulties in implementing TEEs on current HPC
 
+::::{.columns}
+:::{.column}
+:::{.fragment}
 Getting *one* TEE running is difficult
-
+:::
 - BIOS updates
   - Not too difficult
  
@@ -174,11 +255,20 @@ Getting *one* TEE running is difficult
   - Rocky 10 uses [] <- 
   - Much harder to implement at scale
 
+:::
+
+:::{.column}
+
+:::{.fragment}
 Updating at scale is largely impossible
+:::
 
 - HPC prioritises stability and up-time.
 - Updating OS threatens both
   - Package management 
+
+:::
+::::
 
 # Is there no hope for CC on HPC?
 
@@ -186,17 +276,21 @@ Updating at scale is largely impossible
 
 ## TEEs on future systems
 
-## How we would implement TEEs on future HPC infrastructure
+:::{.fragment}
+**How we would implement TEEs on future HPC infrastructure**
+:::
 
 - Hardware must support TEEs
   - Not too difficult, most current-gen hardware now does in various forms
 - Firmware must be configured correctly
   - Ensure BIOS settings to enable CCs are set correctly
-- Chose an appropriate Operating System
+- Choose an appropriate Operating System
   - By then, Rocky may fully support CC, or investigate alternatives [check alts]
 
-## *Should* we implement them?
+:::{.fragment}
+** *Should* we implement them?**
+:::
 
-
+- That topic is outside the scope of this talk.
 
 # Conclusions
