@@ -1,96 +1,5 @@
 [
   {
-    "objectID": "2026-12-03_ciuk/index.html#about-the-presenter",
-    "href": "2026-12-03_ciuk/index.html#about-the-presenter",
-    "title": "Securing our Sensitive Data",
-    "section": "About the presenter",
-    "text": "About the presenter\n\n\n\n\n\nDuncan Leggat\nFormer experimental particle physicist\nRSE in UCL Advanced Research Computing\n\nSpecialising in HPC,\nGPU training,\nConfidential computing."
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
-    "href": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
-    "title": "Securing our Sensitive Data",
-    "section": "What is sensitive data?",
-    "text": "What is sensitive data?\n\n\nData that contains information that must not be unintentionally disclosed\n\n\nPersonal data that directly or indirectly identifies individuals\n\n\n\n\nMedical or other protected category data\n\n\n\n\nEnvironmental data\n\n\n\n\nSensitive IP\n\n\n\n\n\n\n\n\n\n\n\nAnything you would store in a data safe haven, TRE, etc."
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#using-secure-data",
-    "href": "2026-12-03_ciuk/index.html#using-secure-data",
-    "title": "Securing our Sensitive Data",
-    "section": "Using secure data",
-    "text": "Using secure data\nCurrent solutions for running on sensitive data:\n\nAnonymisation -&gt; can’t always guarantee against indirect identification,\nAnalysing in a Trusted Research Environment (TRE) -&gt; limited compute pool\n[other solution?]\n\n\nIf we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems."
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#introduction-to-fridge",
-    "href": "2026-12-03_ciuk/index.html#introduction-to-fridge",
-    "title": "Securing our Sensitive Data",
-    "section": "Introduction to FRIDGE",
-    "text": "Introduction to FRIDGE\nFederated Research Infrastructure by Data Governance Extension (FRIDGE) can be thought of as portable TRE that can be deployed on HPC clusters\n[Insert image that demonstrates this]"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#limits-of-fridge",
-    "href": "2026-12-03_ciuk/index.html#limits-of-fridge",
-    "title": "Securing our Sensitive Data",
-    "section": "Limits of FRIDGE",
-    "text": "Limits of FRIDGE\n[Same image as previous slide]\n\nRelies on governance agreements with HPC provider.\nThough it would break the agreement, they can look at the data being analysed.\nFor particularly sensitive data, therefore, this is not enough security.\n\n\nIs"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#the-trusted-execution-environment-tee",
-    "href": "2026-12-03_ciuk/index.html#the-trusted-execution-environment-tee",
-    "title": "Securing our Sensitive Data",
-    "section": "The Trusted Execution Environment (TEE)",
-    "text": "The Trusted Execution Environment (TEE)\n\nAn attestable, hardware-based environment to protect data.\n\n\nCCC defines a TEE as an environment that provides:\n\nData integrity,\nData confidentiality,\nCode integrity.\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
-    "href": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
-    "title": "Securing our Sensitive Data",
-    "section": "Vendor implementations of TEEs",
-    "text": "Vendor implementations of TEEs\n[Table from intro talk or reproduction thereof?]"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#does-our-current-hpc-infrastructure-support-tees",
-    "href": "2026-12-03_ciuk/index.html#does-our-current-hpc-infrastructure-support-tees",
-    "title": "Securing our Sensitive Data",
-    "section": "Does our current HPC infrastructure support TEEs?",
-    "text": "Does our current HPC infrastructure support TEEs?\nA lot of it does!\nAMD\n\nSEV-SNP is part of EPYC 7003 (Milan) and onwards\nTEE Device Interface Security Protocol (TDISP) to integrate PCIe devices from 9005 (Turin)\n\nIntel\n\nTDX was introduced in the 4th Gen Xeon (Sapphire Rapids)\n\nNvidia\n\nH100s and later offer CC modes\n\nNote: Grace chips aren’t compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#can-we-turn-on-tees-on-a-current-working-hpc",
-    "href": "2026-12-03_ciuk/index.html#can-we-turn-on-tees-on-a-current-working-hpc",
-    "title": "Securing our Sensitive Data",
-    "section": "Can we turn on TEEs on a current, working HPC?",
-    "text": "Can we turn on TEEs on a current, working HPC?\n\nNo."
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
-    "href": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
-    "title": "Securing our Sensitive Data",
-    "section": "Difficulties in implementing TEEs on current HPC",
-    "text": "Difficulties in implementing TEEs on current HPC\nGetting one TEE running is difficult\n\nBIOS updates\n\nNot too difficult\n\nOS and kernel version\n\nRocky 9 uses Linux kernel []\nRocky 10 uses [] &lt;-\nMuch harder to implement at scale\n\n\nUpdating at scale is largely impossible\n\nHPC prioritises stability and up-time.\nUpdating OS threatens both\n\nPackage management"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#tees-on-future-systems",
-    "href": "2026-12-03_ciuk/index.html#tees-on-future-systems",
-    "title": "Securing our Sensitive Data",
-    "section": "TEEs on future systems",
-    "text": "TEEs on future systems"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#how-we-would-implement-tees-on-future-hpc-infrastructure",
-    "href": "2026-12-03_ciuk/index.html#how-we-would-implement-tees-on-future-hpc-infrastructure",
-    "title": "Securing our Sensitive Data",
-    "section": "How we would implement TEEs on future HPC infrastructure",
-    "text": "How we would implement TEEs on future HPC infrastructure\n\nHardware must support TEEs\n\nNot too difficult, most current-gen hardware now does in various forms\n\nFirmware must be configured correctly\n\nEnsure BIOS settings to enable CCs are set correctly\n\nChose an appropriate Operating System\n\nBy then, Rocky may fully support CC, or investigate alternatives [check alts]"
-  },
-  {
-    "objectID": "2026-12-03_ciuk/index.html#should-we-implement-them",
-    "href": "2026-12-03_ciuk/index.html#should-we-implement-them",
-    "title": "Securing our Sensitive Data",
-    "section": "Should we implement them?",
-    "text": "Should we implement them?"
-  },
-  {
     "objectID": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",
     "href": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",
     "title": "Institute for Research Software Fellowship 2027",
@@ -166,5 +75,82 @@
     "title": "Institute for Research Software Fellowship 2027",
     "section": "Building community",
     "text": "Building community\n\nThis is also a community-building activity!\nAt the Nottingham workshop we had people connecting and building expertise between groups and institutions.\nI want to build on this!\nThese are the first steps towards a wider community sharing experiences."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#about-the-presenter",
+    "href": "2026-12-03_ciuk/index.html#about-the-presenter",
+    "title": "Securing our Sensitive Data",
+    "section": "About the presenter",
+    "text": "About the presenter\n\n\n\n\n\nDuncan Leggat\nFormer experimental particle physicist\nRSE in UCL Advanced Research Computing\n\nSpecialising in HPC,\nGPU training,\nConfidential computing."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
+    "href": "2026-12-03_ciuk/index.html#what-is-sensitive-data",
+    "title": "Securing our Sensitive Data",
+    "section": "What is sensitive data?",
+    "text": "What is sensitive data?\n\n\n\nData that contains information that must not be unintentionally disclosed\n\n\n\nPersonal data that directly or indirectly identifies individuals\n\n\n\n\nMedical or other protected category data\n\n\n\n\nSensitive IP\n\n\n\n\nEnvironmental data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock photos from Magnific\n\n\n\nAnything you would store in a data safe haven, TRE, etc."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#using-secure-data",
+    "href": "2026-12-03_ciuk/index.html#using-secure-data",
+    "title": "Securing our Sensitive Data",
+    "section": "Using secure data",
+    "text": "Using secure data\n\n\nCurrent solutions:\n\nAnonymisation\n\n\n\n\n\n\nCan’t always guarantee against indirect identification\n\n\n\n\n\n\n\nNot enough information left for some analyses\n\n\n\n\n\n\nTrusted Research Environment (TRE)\n\n\n\n\n\nStrict governance and technical controls\n\n\n\nLimited compute pool\n\n\n\n\n\n\n\n\nIf we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#introduction-to-fridge",
+    "href": "2026-12-03_ciuk/index.html#introduction-to-fridge",
+    "title": "Securing our Sensitive Data",
+    "section": "Introduction to FRIDGE",
+    "text": "Introduction to FRIDGE\n\n\n\n\n\n\nFederated Research Infrastructure by Data Governance Extension (FRIDGE) can be thought of as portable TRE that can be deployed on HPC clusters"
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#limits-of-fridge",
+    "href": "2026-12-03_ciuk/index.html#limits-of-fridge",
+    "title": "Securing our Sensitive Data",
+    "section": "Limits of FRIDGE",
+    "text": "Limits of FRIDGE\n\n\n\n\n\n\nRelies on governance agreements with HPC provider.\n\n\n\n\n\n\n\nThough it would break the agreement, they can look at the data being analysed.\n\n\n\n\n\n\n\nFor particularly sensitive data, therefore, this is not enough security."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#the-trusted-execution-environment",
+    "href": "2026-12-03_ciuk/index.html#the-trusted-execution-environment",
+    "title": "Securing our Sensitive Data",
+    "section": "The Trusted Execution Environment",
+    "text": "The Trusted Execution Environment\n\nAn attestable, hardware-based environment to protect data.\n\n\nCCC defines a TEE as an environment that provides:\n\nData integrity,\nData confidentiality,\nCode integrity.\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#trustee---adding-tees-to-fridge",
+    "href": "2026-12-03_ciuk/index.html#trustee---adding-tees-to-fridge",
+    "title": "Securing our Sensitive Data",
+    "section": "TRUSTEE - adding TEEs to FRIDGE",
+    "text": "TRUSTEE - adding TEEs to FRIDGE"
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
+    "href": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
+    "title": "Securing our Sensitive Data",
+    "section": "Vendor implementations of TEEs",
+    "text": "Vendor implementations of TEEs\n\n\n\n\n\n\n\n\nVendor\nTEE technology\nGeneration implemented\n\n\n\n\nIntel\nTrust Domain Extensions (TDX)\n4th gen (Sapphire Rapids)\n\n\nAMD\nSecure Encrypted Virutalisation (SEV)\nEPYC 7003 (Milan) onwards)\n\n\n\nTEE Device Interface Security Protocol (TDISP)\nEPYC 9005 (Turin) onwards)\n\n\nARM\nRealm Management Extension (RME)\nOptional from ARM v9\n\n\nNvidia\nGPU CC mode\nHopper and Blackwell GPUs 1\n\n\n\nNote: Grace chips aren’t compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!"
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#can-we-turn-on-tees-on-a-current-working-hpc",
+    "href": "2026-12-03_ciuk/index.html#can-we-turn-on-tees-on-a-current-working-hpc",
+    "title": "Securing our Sensitive Data",
+    "section": "Can we turn on TEEs on a current, working HPC?",
+    "text": "Can we turn on TEEs on a current, working HPC?\nWe worked with the COSMA HPC sysadmins to\n2 goals:\n\nCreate an SEV-SNP enabled CVM on an EPYC based node\n\n\n\nNo."
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
+    "href": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
+    "title": "Securing our Sensitive Data",
+    "section": "Difficulties in implementing TEEs on current HPC",
+    "text": "Difficulties in implementing TEEs on current HPC\n\n\n\nGetting one TEE running is difficult\n\n\nBIOS updates\n\nNot too difficult\n\nOS and kernel version\n\nRocky 9 uses Linux kernel []\nRocky 10 uses [] &lt;-\nMuch harder to implement at scale\n\n\n\n\nUpdating at scale is largely impossible\n\n\nHPC prioritises stability and up-time.\nUpdating OS threatens both\n\nPackage management"
+  },
+  {
+    "objectID": "2026-12-03_ciuk/index.html#tees-on-future-systems",
+    "href": "2026-12-03_ciuk/index.html#tees-on-future-systems",
+    "title": "Securing our Sensitive Data",
+    "section": "TEEs on future systems",
+    "text": "TEEs on future systems\n\nHow we would implement TEEs on future HPC infrastructure\n\n\nHardware must support TEEs\n\nNot too difficult, most current-gen hardware now does in various forms\n\nFirmware must be configured correctly\n\nEnsure BIOS settings to enable CCs are set correctly\n\nChoose an appropriate Operating System\n\nBy then, Rocky may fully support CC, or investigate alternatives [check alts]\n\n\n\n** Should we implement them?**\n\n\nThat topic is outside the scope of this talk."
   }
 ]

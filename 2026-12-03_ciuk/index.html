@@ -177,7 +177,9 @@ Duncan Leggat
 <h2>What is sensitive data?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p>Data that contains information that must not be unintentionally disclosed</p>
+<div class="fragment" data-fragment-index="0">
+<p>Data that contains information that <em>must not</em> be unintentionally disclosed</p>
+</div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Personal data that directly or indirectly identifies individuals</li>
@@ -190,20 +192,29 @@ Duncan Leggat
 </div>
 <div class="fragment" data-fragment-index="3">
 <ul>
-<li>Environmental data</li>
+<li>Sensitive IP</li>
 </ul>
 </div>
 <div class="fragment" data-fragment-index="4">
 <ul>
-<li>Sensitive IP</li>
+<li>Environmental data</li>
 </ul>
 </div>
 </div><div class="column" style="width:60%;">
+<div style="margin-top: -50px;">
+
+</div>
 <div class="r-stack">
-<p><img data-src="images/taytay.jpg" class="fragment" data-fragment-index="1"></p>
-<p><img data-src="images/cat.webp" class="fragment" data-fragment-index="2"></p>
-<p><img data-src="images/taytay.jpg" class="fragment" data-fragment-index="3"></p>
-<p><img data-src="images/cat.webp" class="fragment" data-fragment-index="4"></p>
+<p><img data-src="images/identifiable.avif" class="fragment" data-fragment-index="1"></p>
+<p><img data-src="images/medical.avif" class="fragment fade-in-then-out" data-fragment-index="2"></p>
+<p><img data-src="images/environmental.avif" class="fragment" data-fragment-index="4"></p>
+<p><img data-src="images/ip.avif" class="fragment fade-in-then-out" data-fragment-index="3"></p>
+</div>
+<div style="margin-top: -100px;">
+
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><em>Stock photos from Magnific</em></p>
 </div>
 </div></div>
 <div class="fragment">
@@ -212,12 +223,50 @@ Duncan Leggat
 </section>
 <section id="using-secure-data" class="slide level2">
 <h2>Using secure data</h2>
-<p>Current solutions for running on sensitive data:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Current solutions:</p>
+<div class="fragment" data-fragment-index="1">
+<p><strong>Anonymisation</strong></p>
+</div>
+<div style="margin-top: -20px;">
+
+</div>
+<div class="fragment" data-fragment-index="2">
 <ul>
-<li class="fragment">Anonymisation -&gt; can’t always guarantee against indirect identification,</li>
-<li class="fragment">Analysing in a Trusted Research Environment (TRE) -&gt; limited compute pool</li>
-<li class="fragment">[other solution?]</li>
+<li>Can’t always guarantee against indirect identification</li>
 </ul>
+</div>
+<div style="margin-top: -20px;">
+
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Not enough information left for some analyses</li>
+</ul>
+</div>
+<div style="margin-top: -20px;">
+
+</div>
+<div class="fragment" data-fragment-index="4">
+<p><strong>Trusted Research Environment (TRE)</strong></p>
+</div>
+<div style="margin-top: -20px;">
+
+</div>
+<ul>
+<li class="fragment">Strict governance and technical controls
+<div style="margin-top: -20px;">
+
+</div></li>
+<li class="fragment">Limited compute pool</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="r-stack">
+<p><img data-src="images/anonymous_data.png" class="fragment fade-in-then-out" data-fragment-index="1"></p>
+<p><img data-src="images/TRE.png" class="fragment" style="width:60.0%" data-fragment-index="4"></p>
+</div>
+</div></div>
 <div class="fragment">
 <p>If we want to carry out intensive analyses, particular those with AI/ML workloads, we need to be able to process our sensitive data securely on HPC systems.</p>
 </div>
@@ -229,19 +278,40 @@ Duncan Leggat
 </section>
 <section id="introduction-to-fridge" class="slide level2">
 <h2>Introduction to FRIDGE</h2>
+<div class="r-stack">
+<p><img data-src="images/fridge_before.png"></p>
+<p><img data-src="images/fridge_tenancy.png" class="fragment"></p>
+<p><img data-src="images/fridge_satellite.png" class="fragment"></p>
+<p><img data-src="images/fridge_deployed.png" class="fragment"></p>
+</div>
 <p>Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be thought of as portable TRE that can be deployed on HPC clusters</p>
-<p>[Insert image that demonstrates this]</p>
 </section>
 <section id="limits-of-fridge" class="slide level2">
 <h2>Limits of FRIDGE</h2>
-<p>[Same image as previous slide]</p>
+<div class="r-stack">
+<p><img data-src="images/fridge_notext.png"></p>
+<p><img data-src="images/fridge_problem.png" class="fragment" data-fragment-index="2"></p>
+</div>
+<div class="fragment" data-fragment-index="1">
 <ul>
-<li class="fragment">Relies on governance agreements with HPC provider.</li>
-<li class="fragment">Though it would break the agreement, they <em>can</em> look at the data being analysed.</li>
-<li class="fragment">For particularly sensitive data, therefore, this is not <em>enough</em> security.</li>
+<li>Relies on governance agreements with HPC provider.</li>
 </ul>
+</div>
+<div style="margin-top: -30px;">
+
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Though it would break the agreement, they <em>can</em> look at the data being analysed.</li>
+</ul>
+</div>
+<div style="margin-top: -30px;">
+
+</div>
 <div class="fragment">
-<p>Is</p>
+<ul>
+<li>For particularly sensitive data, therefore, this is not <em>enough</em> security.</li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -254,8 +324,8 @@ Duncan Leggat
 </div>
 </div>
 </section>
-<section id="the-trusted-execution-environment-tee" class="slide level2">
-<h2>The Trusted Execution Environment (TEE)</h2>
+<section id="the-trusted-execution-environment" class="slide level2">
+<h2>The Trusted Execution Environment</h2>
 <div class="fragment">
 <p>An attestable, hardware-based environment to protect data.</p>
 </div>
@@ -269,39 +339,77 @@ Duncan Leggat
 </div>
 <p>A TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.</p>
 </section>
+<section id="trustee---adding-tees-to-fridge" class="slide level2">
+<h2>TRUSTEE - adding TEEs to FRIDGE</h2>
+<div class="r-stack">
+<p><img data-src="images/fridge_notext.png"></p>
+<p><img data-src="images/fridge_trustee.png" class="fragment"></p>
+<p><img data-src="images/fridge_sad_admin.png" class="fragment"></p>
+</div>
+</section>
 <section id="vendor-implementations-of-tees" class="slide level2">
 <h2>Vendor implementations of TEEs</h2>
-<p>[Table from intro talk or reproduction thereof?]</p>
-</section>
-<section id="does-our-current-hpc-infrastructure-support-tees" class="slide level2">
-<h2>Does our current HPC infrastructure support TEEs?</h2>
-<p>A lot of it does!</p>
-<p><em>AMD</em></p>
-<ul>
-<li class="fragment">SEV-SNP is part of EPYC 7003 (Milan) and onwards</li>
-<li class="fragment">TEE Device Interface Security Protocol (TDISP) to integrate PCIe devices from 9005 (Turin)</li>
-</ul>
-<p><em>Intel</em></p>
-<ul>
-<li class="fragment">TDX was introduced in the 4th Gen Xeon (Sapphire Rapids)</li>
-</ul>
-<p><em>Nvidia</em></p>
-<ul>
-<li class="fragment">H100s and later offer CC modes
-<ul>
-<li class="fragment"><strong>Note:</strong> Grace chips <em>aren’t</em> compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!</li>
-</ul></li>
-</ul>
-</section>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 33%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vendor</th>
+<th>TEE technology</th>
+<th>Generation implemented</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intel</td>
+<td>Trust Domain Extensions (TDX)</td>
+<td>4th gen (Sapphire Rapids)</td>
+</tr>
+<tr class="even">
+<td>AMD</td>
+<td>Secure Encrypted Virutalisation (SEV)</td>
+<td>EPYC 7003 (Milan) onwards)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>TEE Device Interface Security Protocol (TDISP)</td>
+<td>EPYC 9005 (Turin) onwards)</td>
+</tr>
+<tr class="even">
+<td>ARM</td>
+<td>Realm Management Extension (RME)</td>
+<td>Optional from ARM v9</td>
+</tr>
+<tr class="odd">
+<td>Nvidia</td>
+<td>GPU CC mode</td>
+<td>Hopper and Blackwell GPUs <sup>1</sup></td>
+</tr>
+</tbody>
+</table>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><strong>Note:</strong> Grace chips <em>aren’t</em> compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!</p></li></ol></aside></section>
 <section id="can-we-turn-on-tees-on-a-current-working-hpc" class="slide level2">
 <h2>Can we turn on TEEs on a current, working HPC?</h2>
+<p>We worked with the COSMA HPC sysadmins to</p>
+<p>2 goals:</p>
+<ul>
+<li class="fragment">Create an SEV-SNP enabled CVM on an EPYC based node</li>
+<li class="fragment"></li>
+</ul>
 <div class="fragment">
 <p>No.</p>
 </div>
 </section>
 <section id="difficulties-in-implementing-tees-on-current-hpc" class="slide level2">
 <h2>Difficulties in implementing TEEs on current HPC</h2>
+<div class="columns">
+<div class="column">
+<div class="fragment">
 <p>Getting <em>one</em> TEE running is difficult</p>
+</div>
 <ul>
 <li class="fragment">BIOS updates
 <ul>
@@ -314,7 +422,10 @@ Duncan Leggat
 <li class="fragment">Much harder to implement at scale</li>
 </ul></li>
 </ul>
+</div><div class="column">
+<div class="fragment">
 <p>Updating at scale is largely impossible</p>
+</div>
 <ul>
 <li class="fragment">HPC prioritises stability and up-time.</li>
 <li class="fragment">Updating OS threatens both
@@ -322,6 +433,7 @@ Duncan Leggat
 <li class="fragment">Package management</li>
 </ul></li>
 </ul>
+</div></div>
 </section></section>
 <section>
 <section id="is-there-no-hope-for-cc-on-hpc" class="title-slide slide level1 center">
@@ -330,9 +442,9 @@ Duncan Leggat
 </section>
 <section id="tees-on-future-systems" class="slide level2">
 <h2>TEEs on future systems</h2>
-</section>
-<section id="how-we-would-implement-tees-on-future-hpc-infrastructure" class="slide level2">
-<h2>How we would implement TEEs on future HPC infrastructure</h2>
+<div class="fragment">
+<p><strong>How we would implement TEEs on future HPC infrastructure</strong></p>
+</div>
 <ul>
 <li class="fragment">Hardware must support TEEs
 <ul>
@@ -342,20 +454,25 @@ Duncan Leggat
 <ul>
 <li class="fragment">Ensure BIOS settings to enable CCs are set correctly</li>
 </ul></li>
-<li class="fragment">Chose an appropriate Operating System
+<li class="fragment">Choose an appropriate Operating System
 <ul>
 <li class="fragment">By then, Rocky may fully support CC, or investigate alternatives [check alts]</li>
 </ul></li>
 </ul>
-</section>
-<section id="should-we-implement-them" class="slide level2">
-<h2><em>Should</em> we implement them?</h2>
+<div class="fragment">
+<p>** <em>Should</em> we implement them?**</p>
+</div>
+<ul>
+<li class="fragment">That topic is outside the scope of this talk.</li>
+</ul>
 </section></section>
 <section id="conclusions" class="title-slide slide level1 center">
 <h1>Conclusions</h1>
 
 
 </section>
+
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
