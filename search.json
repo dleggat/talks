@@ -39,14 +39,14 @@
     "href": "2026-12-03_ciuk/index.html#the-trusted-execution-environment",
     "title": "Securing our Sensitive Data",
     "section": "The Trusted Execution Environment",
-    "text": "The Trusted Execution Environment\n\nAn attestable, hardware-based environment to protect data.\n\n\nCCC defines a TEE as an environment that provides:\n\nData integrity,\nData confidentiality,\nCode integrity.\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
+    "text": "The Trusted Execution Environment\n\n\n\nAn attestable, hardware-based environment to protect data.\n\n\nConfidential Computing Consortium defines a TEE as an environment that provides:\n\n\n\nData integrity,\n\n\n\n\nData confidentiality,\n\n\n\n\nCode integrity.\n\n\n\n\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#trustee---adding-tees-to-fridge",
     "href": "2026-12-03_ciuk/index.html#trustee---adding-tees-to-fridge",
     "title": "Securing our Sensitive Data",
     "section": "TRUSTEE - adding TEEs to FRIDGE",
-    "text": "TRUSTEE - adding TEEs to FRIDGE"
+    "text": "TRUSTEE - adding TEEs to FRIDGE\n\n\n\n\n\nTrusted Research on Untrusted Systems using TEEs (TRUSTEE)"
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",

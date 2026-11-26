@@ -284,7 +284,7 @@ Martin O’Reilly
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="r-stack">
-<p><img data-src="images/anonymous_data.png" class="fragment fade-in-then-out" data-fragment-index="1"></p>
+<p><img data-src="images/anonymous_data.png" class="fragment" data-fragment-index="1"></p>
 <p><img data-src="images/TRE.png" class="fragment" style="width:60.0%" data-fragment-index="4"></p>
 </div>
 </div></div>
@@ -293,9 +293,18 @@ Martin O’Reilly
 </div>
 </section></section>
 <section>
-<section id="fridge-trustee-project" class="title-slide slide level1 center">
-<h1>FRIDGE TRUSTEE project</h1>
-<p>[Placeholder for logos]</p>
+<section id="fridge-and-trustee" class="title-slide slide level1 center">
+<h1>FRIDGE and TRUSTEE</h1>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/fridge_logo.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/trustee_logo.png"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="introduction-to-fridge" class="slide level2">
 <h2>Introduction to FRIDGE</h2>
@@ -347,18 +356,35 @@ Martin O’Reilly
 </section>
 <section id="the-trusted-execution-environment" class="slide level2">
 <h2>The Trusted Execution Environment</h2>
-<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="fragment" data-fragment-index="1">
 <p>An attestable, hardware-based environment to protect data.</p>
 </div>
-<div class="fragment">
-<p>CCC defines a TEE as an environment that provides:</p>
+<div class="fragment" data-fragment-index="2">
+<p>Confidential Computing Consortium defines a TEE as an environment that provides:</p>
+</div>
+<div class="fragment" data-fragment-index="3">
 <ul>
-<li class="fragment">Data integrity,</li>
-<li class="fragment">Data confidentiality,</li>
-<li class="fragment">Code integrity.</li>
+<li>Data integrity,</li>
 </ul>
 </div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>Data confidentiality,</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="5">
+<ul>
+<li>Code integrity.</li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/tee_example.png" class="fragment" data-fragment-index="6"></p>
+</div></div>
+<div class="fragment" data-fragment-index="6">
 <p>A TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.</p>
+</div>
 </section>
 <section id="trustee---adding-tees-to-fridge" class="slide level2">
 <h2>TRUSTEE - adding TEEs to FRIDGE</h2>
@@ -367,6 +393,7 @@ Martin O’Reilly
 <p><img data-src="images/fridge_trustee.png" class="fragment"></p>
 <p><img data-src="images/fridge_sad_admin.png" class="fragment"></p>
 </div>
+<p>Trusted Research on Untrusted Systems using TEEs (TRUSTEE)</p>
 </section>
 <section id="vendor-implementations-of-tees" class="slide level2">
 <h2>Vendor implementations of TEEs</h2>
