@@ -127,7 +127,7 @@ Current solutions:
 
 :::{.r-stack}
 
-![](images/anonymous_data.png){.fragment fragment-index=1 .fade-in-then-out}
+![](images/anonymous_data.png){.fragment fragment-index=1}
 
 ![](images/TRE.png){.fragment fragment-index=4 width=60%}
 
@@ -143,9 +143,15 @@ If we want to carry out intensive analyses, particular those with AI/ML workload
 
 
 
-# FRIDGE TRUSTEE project
+# FRIDGE and TRUSTEE
 
-[Placeholder for logos]
+:::{layout-ncol=2}
+
+![](images/fridge_logo.png)
+
+![](images/trustee_logo.png)
+
+:::
 
 ## Introduction to FRIDGE
 
@@ -196,20 +202,40 @@ Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be t
 
 ## The Trusted Execution Environment
 
-:::{.fragment}
+::::{.columns}
+:::{.column width=40%}
+
+:::{.fragment fragment-index=1}
 An attestable, hardware-based environment to protect data.
 :::
 
-:::{.fragment}
-CCC defines a TEE as an environment that provides:
-
+:::{.fragment fragment-index=2}
+Confidential Computing Consortium defines a TEE as an environment that provides:
+:::
+:::{.nonincremental}
+:::{.fragment fragment-index=3}
 - Data integrity,
+:::
+:::{.fragment fragment-index=4}
 - Data confidentiality,
+:::
+:::{.fragment fragment-index=5}
 - Code integrity.
+:::
+:::
 
 :::
 
+:::{.column width=60%}
+![](images/tee_example.png){.fragment fragment-index=6}
+:::
+::::
+
+:::{.fragment fragment-index=6}
 A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.
+:::
+
+
 
 ## TRUSTEE - adding TEEs to FRIDGE
 
@@ -220,6 +246,8 @@ A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cr
 
 ![](images/fridge_sad_admin.png){.fragment}
 :::
+
+Trusted Research on Untrusted Systems using TEEs (TRUSTEE)
 
 ## Vendor implementations of TEEs
 
