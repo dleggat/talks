@@ -225,19 +225,31 @@ A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cr
 | ARM    | Realm Management Extension (RME) | Optional from ARM v9 |
 | Nvidia | GPU CC mode | Hopper and Blackwell GPUs [^1] |
 
+:::{.fragment}
+So this technology exists in current HPC infrastructure
+:::
+
 [^1]: **Note:** Grace chips *aren't* compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot! 
 
 ## Can we turn on TEEs on a current, working HPC?
 
-We worked with the COSMA HPC sysadmins to
+:::{.fragment}
+We worked with the COSMA HPC sysadmins to see if we could deploy a TEE on a live HPC system.
+:::
+:::{.fragment}
+**2 goals**
+:::
 
-2 goals:
+- Create an SEV-SNP enabled CVM on an EPYC-based node,
+- Deploying a CC-enabled TEE that included an H100.
 
-- Create an SEV-SNP enabled CVM on an EPYC based node
-- 
 
 :::{.fragment}
-No.
+So it was a smooth process and we are now able to process sensitive data on HPCs, right?
+:::
+
+:::{.fragment}
+*No.*
 :::
 
 ## Difficulties in implementing TEEs on current HPC
@@ -247,14 +259,26 @@ No.
 :::{.fragment}
 Getting *one* TEE running is difficult
 :::
-- BIOS updates
-  - Not too difficult
- 
-- OS and kernel version
-  - Rocky 9 uses Linux kernel []
-  - Rocky 10 uses [] <- 
-  - Much harder to implement at scale
 
+:::{.fragment}
+**BIOS settings**
+:::
+
+- CC not enabled by default in hardware
+- Not too difficult to update
+ 
+:::{.fragment}
+**OS and kernel version**
+:::
+
+- Rocky and RHEL use stable LTS Linux kernels, which don't have full CC enabled
+  
+:::{.fragment}
+| OS | Linux kernel | CC support? |
+| -- | ------------ | ----------- |
+| Rocky/RHEL 9 | 5.14 | No |
+| Rocky/RHEL 10 | 6.12 | Technical preview |
+:::
 :::
 
 :::{.column}
@@ -264,9 +288,10 @@ Updating at scale is largely impossible
 :::
 
 - HPC prioritises stability and up-time.
-- Updating OS threatens both
-  - Package management 
-
+- Updating OS threatens both:
+  - A lot of work to check necessary packages on the new OS,
+  - Updating hundreds of nodes puts a significant dent in up-time.
+  
 :::
 ::::
 
@@ -294,3 +319,5 @@ Updating at scale is largely impossible
 - That topic is outside the scope of this talk.
 
 # Conclusions
+
+[Thoughtful and relevant conclusions go here]
