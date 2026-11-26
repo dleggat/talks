@@ -1,8 +1,12 @@
 ---
 author:
   - Duncan Leggat
+  - Jim Madge
+  - Tuomas Koskela
 institute:
-  - UCL ARC
+  - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[Alan Turing Institute](https://www.turing.ac.uk/)"
+  - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 date: 2026-12-03
 title: Securing our Sensitive Data
 subtitle: The demand for and challenges of Confidential Computing on High Performance Computing
