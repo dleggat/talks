@@ -12,6 +12,9 @@ institute:
 date: 2026-12-03
 title: Securing our Sensitive Data
 subtitle: The demand for and challenges of Confidential Computing on High Performance Computing
+format:
+  revealjs:
+    footer: Securing our sensitive data
 ---
 
 ## About the presenter
@@ -189,7 +192,8 @@ Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be t
 :::
 :::
 
-# Introducing Confidential Computing
+
+# [Introducing Confidential Computing]{style="font-size: 60%"}
 
 ::: {.r-hstack}
 ![](images/rest_move.png)
@@ -205,6 +209,7 @@ Federated Research Infrastructure by Data Governance Extension (FRIDGE) can be t
 ::::{.columns}
 :::{.column width=40%}
 
+<div style="margin-top: 30px;"></div>
 :::{.fragment fragment-index=1}
 An attestable, hardware-based environment to protect data.
 :::
@@ -213,26 +218,35 @@ An attestable, hardware-based environment to protect data.
 Confidential Computing Consortium defines a TEE as an environment that provides:
 :::
 :::{.nonincremental}
+<div style="margin-top: -15px;"></div>
 :::{.fragment fragment-index=3}
 - Data integrity,
 :::
+<div style="margin-top: -15px;"></div>
 :::{.fragment fragment-index=4}
 - Data confidentiality,
 :::
+<div style="margin-top: -15px;"></div>
 :::{.fragment fragment-index=5}
 - Code integrity.
 :::
+:::
+<div style="margin-top: -15px;"></div>
+:::{.fragment fragment-index=6}
+**In practice**
 :::
 
 :::
 
 :::{.column width=60%}
+<div style="margin-top: -20px;"></div>
 ![](images/tee_example.png){.fragment fragment-index=6}
 :::
 ::::
 
+<div style="margin-top: -40px;"></div>
 :::{.fragment fragment-index=6}
-A TEE is usually an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.
+A TEE is an 'enclave' or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.
 :::
 
 
@@ -251,19 +265,20 @@ Trusted Research on Untrusted Systems using TEEs (TRUSTEE)
 
 ## Vendor implementations of TEEs
 
+<div style="margin-top: 20px;"></div>
 | Vendor | TEE technology | Generation implemented |
 | ------ | -------------- | ---------------------- |
-| Intel  | Trust Domain Extensions (TDX) | 4th gen (Sapphire Rapids) |
-| AMD    | Secure Encrypted Virutalisation (SEV) | EPYC 7003 (Milan) onwards)
-|        | TEE Device Interface Security Protocol (TDISP) | EPYC 9005 (Turin) onwards) |
-| ARM    | Realm Management Extension (RME) | Optional from ARM v9 |
-| Nvidia | GPU CC mode | Hopper and Blackwell GPUs [^1] |
+| [Intel]{.fragment}  | [Trust Domain Extensions (TDX)]{.fragment} | [4th gen Xeon (Sapphire Rapids)]{.fragment} |
+| [AMD]{.fragment}    | [Secure Encrypted Virtualisation (SEV)]{.fragment} | [EPYC 7003 (Milan)]{.fragment} |
+|        | [TEE Device Interface Security Protocol (TDISP)]{.fragment} | [EPYC 9005 (Turin)]{.fragment} |
+| [ARM]{.fragment}    | [Realm Management Extension (RME)]{.fragment} | [Optional from ARM v9]{.fragment} |
+| [Nvidia]{.fragment} | [GPU CC mode]{.fragment} | [Hopper and Blackwell GPUs [^1]]{.fragment} |
 
+<div style="margin-top: 30px;"></div>
 :::{.fragment}
 So this technology exists in current HPC infrastructure
 :::
-
-[^1]: **Note:** Grace chips *aren't* compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot! 
+[^1]: **Note:** Grace chips *aren't* compatible, so whilst Hoppers can run TEEs, Grace Hoppers cannot!
 
 ## Can we turn on TEEs on a current, working HPC?
 
@@ -286,7 +301,7 @@ So it was a smooth process and we are now able to process sensitive data on HPCs
 *No.*
 :::
 
-## Difficulties in implementing TEEs on current HPC
+## Difficulties in HPC implementation
 
 ::::{.columns}
 :::{.column}
@@ -305,8 +320,6 @@ Getting *one* TEE running is difficult
 **OS and kernel version**
 :::
 
-- Rocky and RHEL use stable LTS Linux kernels, which don't have full CC enabled
-  
 :::{.fragment}
 | OS | Linux kernel | CC support? |
 | -- | ------------ | ----------- |
@@ -347,7 +360,7 @@ Updating at scale is largely impossible
   - By then, Rocky may fully support CC, or investigate alternatives [check alts]
 
 :::{.fragment}
-** *Should* we implement them?**
+***Should* we implement them?**
 :::
 
 - That topic is outside the scope of this talk.
