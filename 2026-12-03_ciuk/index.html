@@ -346,7 +346,7 @@ Martin O’Reilly
 </section></section>
 <section>
 <section id="introducing-confidential-computing" class="title-slide slide level1 center">
-<h1>Introducing Confidential Computing</h1>
+<h1><span style="font-size: 60%">Introducing Confidential Computing</span></h1>
 <div class="r-hstack">
 <p><img data-src="images/rest_move.png"></p>
 <div class="fragment">
@@ -358,32 +358,56 @@ Martin O’Reilly
 <h2>The Trusted Execution Environment</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
+<div style="margin-top: 30px;">
+
+</div>
 <div class="fragment" data-fragment-index="1">
 <p>An attestable, hardware-based environment to protect data.</p>
 </div>
 <div class="fragment" data-fragment-index="2">
 <p>Confidential Computing Consortium defines a TEE as an environment that provides:</p>
 </div>
+<div style="margin-top: -15px;">
+
+</div>
 <div class="fragment" data-fragment-index="3">
 <ul>
 <li>Data integrity,</li>
 </ul>
+</div>
+<div style="margin-top: -15px;">
+
 </div>
 <div class="fragment" data-fragment-index="4">
 <ul>
 <li>Data confidentiality,</li>
 </ul>
 </div>
+<div style="margin-top: -15px;">
+
+</div>
 <div class="fragment" data-fragment-index="5">
 <ul>
 <li>Code integrity.</li>
 </ul>
 </div>
+<div style="margin-top: -15px;">
+
+</div>
+<div class="fragment" data-fragment-index="6">
+<p><strong>In practice</strong></p>
+</div>
 </div><div class="column" style="width:60%;">
+<div style="margin-top: -20px;">
+
+</div>
 <p><img data-src="images/tee_example.png" class="fragment" data-fragment-index="6"></p>
 </div></div>
+<div style="margin-top: -40px;">
+
+</div>
 <div class="fragment" data-fragment-index="6">
-<p>A TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.</p>
+<p>A TEE is an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers.</p>
 </div>
 </section>
 <section id="trustee---adding-tees-to-fridge" class="slide level2">
@@ -397,6 +421,9 @@ Martin O’Reilly
 </section>
 <section id="vendor-implementations-of-tees" class="slide level2">
 <h2>Vendor implementations of TEEs</h2>
+<div style="margin-top: 20px;">
+
+</div>
 <table class="caption-top">
 <colgroup>
 <col style="width: 14%">
@@ -412,36 +439,39 @@ Martin O’Reilly
 </thead>
 <tbody>
 <tr class="odd">
-<td>Intel</td>
-<td>Trust Domain Extensions (TDX)</td>
-<td>4th gen (Sapphire Rapids)</td>
+<td><span class="fragment">Intel</span></td>
+<td><span class="fragment">Trust Domain Extensions (TDX)</span></td>
+<td><span class="fragment">4th gen Xeon (Sapphire Rapids)</span></td>
 </tr>
 <tr class="even">
-<td>AMD</td>
-<td>Secure Encrypted Virutalisation (SEV)</td>
-<td>EPYC 7003 (Milan) onwards)</td>
+<td><span class="fragment">AMD</span></td>
+<td><span class="fragment">Secure Encrypted Virtualisation (SEV)</span></td>
+<td><span class="fragment">EPYC 7003 (Milan)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>TEE Device Interface Security Protocol (TDISP)</td>
-<td>EPYC 9005 (Turin) onwards)</td>
+<td><span class="fragment">TEE Device Interface Security Protocol (TDISP)</span></td>
+<td><span class="fragment">EPYC 9005 (Turin)</span></td>
 </tr>
 <tr class="even">
-<td>ARM</td>
-<td>Realm Management Extension (RME)</td>
-<td>Optional from ARM v9</td>
+<td><span class="fragment">ARM</span></td>
+<td><span class="fragment">Realm Management Extension (RME)</span></td>
+<td><span class="fragment">Optional from ARM v9</span></td>
 </tr>
 <tr class="odd">
-<td>Nvidia</td>
-<td>GPU CC mode</td>
-<td>Hopper and Blackwell GPUs <sup>1</sup></td>
+<td><span class="fragment">Nvidia</span></td>
+<td><span class="fragment">GPU CC mode</span></td>
+<td><span class="fragment">Hopper and Blackwell GPUs <sup>1</sup></span></td>
 </tr>
 </tbody>
 </table>
+<div style="margin-top: 30px;">
+
+</div>
 <div class="fragment">
 <p>So this technology exists in current HPC infrastructure</p>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><strong>Note:</strong> Grace chips <em>aren’t</em> compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><strong>Note:</strong> Grace chips <em>aren’t</em> compatible, so whilst Hoppers can run TEEs, Grace Hoppers cannot!</p></li></ol></aside></section>
 <section id="can-we-turn-on-tees-on-a-current-working-hpc" class="slide level2">
 <h2>Can we turn on TEEs on a current, working HPC?</h2>
 <div class="fragment">
@@ -461,8 +491,8 @@ Martin O’Reilly
 <p><em>No.</em></p>
 </div>
 </section>
-<section id="difficulties-in-implementing-tees-on-current-hpc" class="slide level2">
-<h2>Difficulties in implementing TEEs on current HPC</h2>
+<section id="difficulties-in-hpc-implementation" class="slide level2">
+<h2>Difficulties in HPC implementation</h2>
 <div class="columns">
 <div class="column">
 <div class="fragment">
@@ -478,9 +508,6 @@ Martin O’Reilly
 <div class="fragment">
 <p><strong>OS and kernel version</strong></p>
 </div>
-<ul>
-<li class="fragment">Rocky and RHEL use stable LTS Linux kernels, which don’t have full CC enabled</li>
-</ul>
 <div class="fragment">
 <table class="caption-top">
 <thead>
@@ -543,7 +570,7 @@ Martin O’Reilly
 </ul></li>
 </ul>
 <div class="fragment">
-<p>** <em>Should</em> we implement them?**</p>
+<p><strong><em>Should</em> we implement them?</strong></p>
 </div>
 <ul>
 <li class="fragment">That topic is outside the scope of this talk.</li>
@@ -560,7 +587,7 @@ Martin O’Reilly
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>Securing our sensitive data</p>
 </div>
 </div></div>
 

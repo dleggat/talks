@@ -39,7 +39,7 @@
     "href": "2026-12-03_ciuk/index.html#the-trusted-execution-environment",
     "title": "Securing our Sensitive Data",
     "section": "The Trusted Execution Environment",
-    "text": "The Trusted Execution Environment\n\n\n\nAn attestable, hardware-based environment to protect data.\n\n\nConfidential Computing Consortium defines a TEE as an environment that provides:\n\n\n\nData integrity,\n\n\n\n\nData confidentiality,\n\n\n\n\nCode integrity.\n\n\n\n\n\n\nA TEE is usually an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
+    "text": "The Trusted Execution Environment\n\n\n\n\n\n\nAn attestable, hardware-based environment to protect data.\n\n\nConfidential Computing Consortium defines a TEE as an environment that provides:\n\n\n\n\n\n\nData integrity,\n\n\n\n\n\n\n\nData confidentiality,\n\n\n\n\n\n\n\nCode integrity.\n\n\n\n\n\n\nIn practice\n\n\n\n\n\n\n\n\n\n\n\nA TEE is an ‘enclave’ or a Confidential Virtual Machine (CVM) that is cryptographically isolated from the rest of the system, including from the OS, the hypervisor and superusers."
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#trustee---adding-tees-to-fridge",
@@ -53,7 +53,7 @@
     "href": "2026-12-03_ciuk/index.html#vendor-implementations-of-tees",
     "title": "Securing our Sensitive Data",
     "section": "Vendor implementations of TEEs",
-    "text": "Vendor implementations of TEEs\n\n\n\n\n\n\n\n\nVendor\nTEE technology\nGeneration implemented\n\n\n\n\nIntel\nTrust Domain Extensions (TDX)\n4th gen (Sapphire Rapids)\n\n\nAMD\nSecure Encrypted Virutalisation (SEV)\nEPYC 7003 (Milan) onwards)\n\n\n\nTEE Device Interface Security Protocol (TDISP)\nEPYC 9005 (Turin) onwards)\n\n\nARM\nRealm Management Extension (RME)\nOptional from ARM v9\n\n\nNvidia\nGPU CC mode\nHopper and Blackwell GPUs 1\n\n\n\n\nSo this technology exists in current HPC infrastructure\n\nNote: Grace chips aren’t compatible, so standalone Hoppers can run TEEs, but Grace Hoppers cannot!"
+    "text": "Vendor implementations of TEEs\n\n\n\n\n\n\n\n\n\n\n\nVendor\nTEE technology\nGeneration implemented\n\n\n\n\nIntel\nTrust Domain Extensions (TDX)\n4th gen Xeon (Sapphire Rapids)\n\n\nAMD\nSecure Encrypted Virtualisation (SEV)\nEPYC 7003 (Milan)\n\n\n\nTEE Device Interface Security Protocol (TDISP)\nEPYC 9005 (Turin)\n\n\nARM\nRealm Management Extension (RME)\nOptional from ARM v9\n\n\nNvidia\nGPU CC mode\nHopper and Blackwell GPUs 1\n\n\n\n\n\n\n\nSo this technology exists in current HPC infrastructure\n\nNote: Grace chips aren’t compatible, so whilst Hoppers can run TEEs, Grace Hoppers cannot!"
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#can-we-turn-on-tees-on-a-current-working-hpc",
@@ -63,18 +63,18 @@
     "text": "Can we turn on TEEs on a current, working HPC?\n\nWe worked with the COSMA HPC sysadmins to see if we could deploy a TEE on a live HPC system.\n\n\n2 goals\n\n\nCreate an SEV-SNP enabled CVM on an EPYC-based node,\nDeploying a CC-enabled TEE that included an H100.\n\n\nSo it was a smooth process and we are now able to process sensitive data on HPCs, right?\n\n\nNo."
   },
   {
-    "objectID": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
-    "href": "2026-12-03_ciuk/index.html#difficulties-in-implementing-tees-on-current-hpc",
+    "objectID": "2026-12-03_ciuk/index.html#difficulties-in-hpc-implementation",
+    "href": "2026-12-03_ciuk/index.html#difficulties-in-hpc-implementation",
     "title": "Securing our Sensitive Data",
-    "section": "Difficulties in implementing TEEs on current HPC",
-    "text": "Difficulties in implementing TEEs on current HPC\n\n\n\nGetting one TEE running is difficult\n\n\nBIOS settings\n\n\nCC not enabled by default in hardware\nNot too difficult to update\n\n\nOS and kernel version\n\n\nRocky and RHEL use stable LTS Linux kernels, which don’t have full CC enabled\n\n\n\n\n\nOS\nLinux kernel\nCC support?\n\n\n\n\nRocky/RHEL 9\n5.14\nNo\n\n\nRocky/RHEL 10\n6.12\nTechnical preview\n\n\n\n\n\n\nUpdating at scale is largely impossible\n\n\nHPC prioritises stability and up-time.\nUpdating OS threatens both:\n\nA lot of work to check necessary packages on the new OS,\nUpdating hundreds of nodes puts a significant dent in up-time."
+    "section": "Difficulties in HPC implementation",
+    "text": "Difficulties in HPC implementation\n\n\n\nGetting one TEE running is difficult\n\n\nBIOS settings\n\n\nCC not enabled by default in hardware\nNot too difficult to update\n\n\nOS and kernel version\n\n\n\n\n\nOS\nLinux kernel\nCC support?\n\n\n\n\nRocky/RHEL 9\n5.14\nNo\n\n\nRocky/RHEL 10\n6.12\nTechnical preview\n\n\n\n\n\n\nUpdating at scale is largely impossible\n\n\nHPC prioritises stability and up-time.\nUpdating OS threatens both:\n\nA lot of work to check necessary packages on the new OS,\nUpdating hundreds of nodes puts a significant dent in up-time."
   },
   {
     "objectID": "2026-12-03_ciuk/index.html#tees-on-future-systems",
     "href": "2026-12-03_ciuk/index.html#tees-on-future-systems",
     "title": "Securing our Sensitive Data",
     "section": "TEEs on future systems",
-    "text": "TEEs on future systems\n\nHow we would implement TEEs on future HPC infrastructure\n\n\nHardware must support TEEs\n\nNot too difficult, most current-gen hardware now does in various forms\n\nFirmware must be configured correctly\n\nEnsure BIOS settings to enable CCs are set correctly\n\nChoose an appropriate Operating System\n\nBy then, Rocky may fully support CC, or investigate alternatives [check alts]\n\n\n\n** Should we implement them?**\n\n\nThat topic is outside the scope of this talk."
+    "text": "TEEs on future systems\n\nHow we would implement TEEs on future HPC infrastructure\n\n\nHardware must support TEEs\n\nNot too difficult, most current-gen hardware now does in various forms\n\nFirmware must be configured correctly\n\nEnsure BIOS settings to enable CCs are set correctly\n\nChoose an appropriate Operating System\n\nBy then, Rocky may fully support CC, or investigate alternatives [check alts]\n\n\n\nShould we implement them?\n\n\nThat topic is outside the scope of this talk."
   },
   {
     "objectID": "2026-10-04_ssi-fellowship/index.html#research-software-before-rse",
